@@ -29,18 +29,18 @@ function App() {
       setCount(storedCount ? parseInt(storedCount, 10) : 0);
     }
 
-    let user = {
-      id: 11,
-      first_name: 'asds',
-      last_name: 'new',
-      username: 'hahaha',
-      language_code: 'en',
-      is_premium: true,
-    }
-    setUserData(user);
-     // Load count from localStorage
-     const storedCount = localStorage.getItem(`count_${user.id}`);
-     setCount(storedCount ? parseInt(storedCount, 10) : 0);
+    // let user = {
+    //   id: 11,
+    //   first_name: 'asds',
+    //   last_name: 'new',
+    //   username: 'hahaha',
+    //   language_code: 'en',
+    //   is_premium: true,
+    // }
+    // setUserData(user);
+    //  // Load count from localStorage
+    //  const storedCount = localStorage.getItem(`count_${user.id}`);
+    //  setCount(storedCount ? parseInt(storedCount, 10) : 0);
   }, [])
 
   const incrementCount = () => {
