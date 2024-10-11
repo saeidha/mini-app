@@ -22,24 +22,44 @@ function App() {
 
   useEffect(() => {
     if (WebApp.initDataUnsafe.user) {
-      setUserData(WebApp.initDataUnsafe.user as UserData)
+
+      let user = WebApp.initDataUnsafe.user as UserData
+      setUserData(user);
+      const storedCount = localStorage.getItem(`count_${user.id}`);
+      setCount(storedCount ? parseInt(storedCount, 10) : 0);
     }
-    setUserData({
-      id: 12,
+
+    let user = {
+      id: 11,
       first_name: 'asds',
       last_name: 'new',
       username: 'hahaha',
       language_code: 'en',
       is_premium: true,
-    });
+    }
+    setUserData(user);
+     // Load count from localStorage
+     const storedCount = localStorage.getItem(`count_${user.id}`);
+     setCount(storedCount ? parseInt(storedCount, 10) : 0);
   }, [])
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  useEffect(() => {
+    if (userData) {
+      // Save count to localStorage whenever it changes
+      localStorage.setItem(`count_${userData.id}`, count.toString());
+    }
+  }, [userData, count]);
 
   return (
     <>
 
       <h2>Telegram Mini app</h2>
 
-      <img src={baseLogo} className="logo" alt="Base logo" onClick={() => setCount((count) => count + 1)} />
+      <img src={baseLogo} className="logo" alt="Base logo" onClick={incrementCount} />
 
       <div className="p-4">
         {userData ? (
@@ -59,8 +79,11 @@ function App() {
       <div className="card">
       <button>the count is {count}</button>
       </div>
-      <p className="read-the-docs">Tap on Base Icon</p>
 
+      <div className="card">
+        
+
+      </div>
     </>
   )
 }
