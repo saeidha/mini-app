@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import baseLogo from '/base.svg'
+import verified from '/verified.png'
 import './App.css'
 import WebApp from '@twa-dev/sdk'
 
@@ -13,6 +14,7 @@ interface UserData {
   is_premium?: boolean;
 }
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,6 +24,14 @@ function App() {
     if (WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user as UserData)
     }
+    setUserData({
+      id: 12,
+      first_name: 'asds',
+      last_name: 'new',
+      username: 'hahaha',
+      language_code: 'en',
+      is_premium: true,
+    });
   }, [])
 
   return (
@@ -29,20 +39,17 @@ function App() {
 
       <h2>Telegram Mini app</h2>
 
-      <img src={baseLogo} className="logo" alt="Vite logo" onClick={() => setCount((count) => count + 1)} />
+      <img src={baseLogo} className="logo" alt="Base logo" onClick={() => setCount((count) => count + 1)} />
 
       <div className="p-4">
         {userData ? (
           <>
-            <h4 className="text-2xl font-bold mb-4">User Data</h4>
-            <ul>
-              <li>ID: {userData.id}</li>
-              <li>First Name: {userData.first_name}</li>
-              <li>Last Name: {userData.last_name || 'N/A'}</li>
-              <li>Username: {userData.username || 'N/A'}</li>
-              <li>Language Code: {userData.language_code}</li>
-              <li>Is Premium: {userData.is_premium ? 'Yes' : 'No'}</li>
-            </ul>
+          <div className="name-div">
+          {userData.is_premium ?(<img src={verified} width="30" height="30"/>):(<></>)}
+          <h3 className="text-2xl font-bold mb-4 username">@{userData.username}</h3>
+            </div>
+            <p> Welcome {userData.first_name} {userData.last_name} </p>
+            
           </>
         ) : (
           <div>Loading...</div>
