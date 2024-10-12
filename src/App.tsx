@@ -96,7 +96,7 @@ function App() {
   return (
     <>
 
-      <h2 className='roboto-bold'>Based Bet Bot</h2>
+      {/* <h2 className='roboto-bold'>Based Bet Bot</h2> */}
 
       <img src={baseLogo} className="logo" alt="Base logo" onClick={incrementCount} />
 
