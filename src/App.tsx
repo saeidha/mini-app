@@ -3,6 +3,7 @@ import baseLogo from '/base.svg'
 import verified from '/verified.png'
 import './App.css'
 import WebApp from '@twa-dev/sdk'
+import VerticalTableView from './VerticalTableView'
 
 // Define the interface for user data
 interface UserData {
@@ -13,6 +14,33 @@ interface UserData {
   language_code: string;
   is_premium?: boolean;
 }
+
+const items = [
+  {
+    id: 1,
+    icon: baseLogo,
+    title: 'Follow Fracaster',
+    description: '+1000 B',
+    buttonLabel: 'Open',
+    onButtonClick: () => alert('Edit User Profile'),
+  },
+  {
+    id: 2,
+    icon: baseLogo,
+    title: 'Follow Instagram',
+    description: '+1000 B',
+    buttonLabel: 'Open',
+    onButtonClick: () => alert('View Wallet'),
+  },
+  {
+    id: 3,
+    icon: baseLogo,
+    title: 'Follow Twitter',
+    description: '+1000 B',
+    buttonLabel: 'Open',
+    onButtonClick: () => alert('Open Tasks'),
+  },
+];
 
 
 function App() {
@@ -84,6 +112,11 @@ function App() {
         
 
       </div>
+
+      <div style={{ padding: '2rem' }}>
+      <h3 className='task-header-text'>Tasks</h3>
+      <VerticalTableView items={items} />
+    </div>
     </>
   )
 }
