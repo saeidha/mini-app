@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width:80%;
 }
 
 .logo {
@@ -121,4 +122,15 @@
 
 .username{
   padding-left: 0.5em;
+}
+
+.task-header-text {
+  text-align: left;
+}
+
+.score-header-text {
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: xx-large;
 }

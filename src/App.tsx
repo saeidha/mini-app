@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import baseLogo from '/base.svg'
+import baseLogo from '/base.png'
 import verified from '/verified.png'
 import './App.css'
 import WebApp from '@twa-dev/sdk'
@@ -85,7 +85,7 @@ function App() {
   return (
     <>
 
-      <h2>Telegram Mini app</h2>
+      <h2>Based Bet Bot</h2>
 
       <img src={baseLogo} className="logo" alt="Base logo" onClick={incrementCount} />
 
@@ -104,16 +104,9 @@ function App() {
         )}
       </div>
 
-      <div className="card">
-      <button>the count is {count}</button>
-      </div>
+      <p className='score-header-text'>{count} B</p>
 
-      <div className="card">
-        
-
-      </div>
-
-      <div style={{ padding: '2rem' }}>
+      <div>
       <h3 className='task-header-text'>Tasks</h3>
       <VerticalTableView items={items} />
     </div>
