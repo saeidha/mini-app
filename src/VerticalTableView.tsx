@@ -1,4 +1,5 @@
 import './VerticalTableView.css';
+
 interface Item {
   id: number;
   icon: string;

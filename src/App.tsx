@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import baseLogo from '/base.png'
 import verified from '/verified.png'
+import discord from '/discord.png';
+import farcaster from '/farcaster.svg';
+import twitter from '/twitter.png';
 import './App.css'
 import WebApp from '@twa-dev/sdk'
 import VerticalTableView from './VerticalTableView'
@@ -18,7 +21,7 @@ interface UserData {
 const items = [
   {
     id: 1,
-    icon: baseLogo,
+    icon: twitter,
     title: 'Follow Base on X',
     description: '+1000 B',
     buttonLabel: 'Open',
@@ -26,7 +29,7 @@ const items = [
   },
   {
     id: 2,
-    icon: baseLogo,
+    icon: farcaster,
     title: 'Follow Base on Farcaster',
     description: '+1000 B',
     buttonLabel: 'Open',
@@ -34,7 +37,7 @@ const items = [
   },
   {
     id: 3,
-    icon: baseLogo,
+    icon: discord,
     title: 'Join Base on Discord',
     description: '+1000 B',
     buttonLabel: 'Open',
@@ -42,7 +45,7 @@ const items = [
   },
   {
     id: 4,
-    icon: baseLogo,
+    icon: farcaster,
     title: 'Follow Jesse on Farcaster',
     description: '+1000 B',
     buttonLabel: 'Open',
