@@ -19,27 +19,35 @@ const items = [
   {
     id: 1,
     icon: baseLogo,
-    title: 'Follow Fracaster',
+    title: 'Follow @base twitter',
     description: '+1000 B',
     buttonLabel: 'Open',
-    onButtonClick: () => alert('Edit User Profile'),
+    link: 'https://x.com/base',
   },
   {
     id: 2,
     icon: baseLogo,
-    title: 'Follow Instagram',
+    title: 'Follow @base Farcaster',
     description: '+1000 B',
     buttonLabel: 'Open',
-    onButtonClick: () => alert('View Wallet'),
+    link: 'https://warpcast.com/base',
   },
   {
     id: 3,
     icon: baseLogo,
-    title: 'Follow Twitter',
+    title: 'Join base discord',
     description: '+1000 B',
     buttonLabel: 'Open',
-    onButtonClick: () => alert('Open Tasks'),
+    link: 'https://discord.gg/buildonbase',
   },
+  {
+    id: 4,
+    icon: baseLogo,
+    title: 'Follow @jessepollak Farcaster',
+    description: '+500 B',
+    buttonLabel: 'Open',
+    link: 'https://warpcast.com/jessepollak',
+  }
 ];
 
 
@@ -96,7 +104,7 @@ function App() {
           {userData.is_premium ?(<img src={verified} width="30" height="30"/>):(<></>)}
           <h3 className="text-2xl font-bold mb-4 username">@{userData.username}</h3>
             </div>
-            <p className='roboto'> Welcome {userData.first_name} {userData.last_name} </p>
+            <p className='roboto'> Welcome back to {userData.first_name} {userData.last_name} </p>
             
           </>
         ) : (

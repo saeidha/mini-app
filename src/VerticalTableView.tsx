@@ -5,7 +5,7 @@ interface Item {
   title: string;
   description: string;
   buttonLabel: string;
-  onButtonClick: () => void;
+  link: string;
 }
 
 interface VerticalTableViewProps {
@@ -26,7 +26,13 @@ const VerticalTableView = ({ items }: VerticalTableViewProps) => {
             <p className="vertical-table-description">{item.description}</p>
           </div>
           <div>
-            <button className="vertical-table-button" onClick={item.onButtonClick}>{item.buttonLabel}</button>
+            <button
+              className="vertical-table-button"
+              onClick={() => window.open(item.link, '_blank')}
+            >
+              {item.buttonLabel}
+            </button>
+
           </div>
         </div>
       ))}
