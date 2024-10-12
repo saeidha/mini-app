@@ -85,7 +85,7 @@ function App() {
   return (
     <>
 
-      <h2>Based Bet Bot</h2>
+      <h2 className='roboto-bold'>Based Bet Bot</h2>
 
       <img src={baseLogo} className="logo" alt="Base logo" onClick={incrementCount} />
 
@@ -96,7 +96,7 @@ function App() {
           {userData.is_premium ?(<img src={verified} width="30" height="30"/>):(<></>)}
           <h3 className="text-2xl font-bold mb-4 username">@{userData.username}</h3>
             </div>
-            <p> Welcome {userData.first_name} {userData.last_name} </p>
+            <p className='roboto'> Welcome {userData.first_name} {userData.last_name} </p>
             
           </>
         ) : (
