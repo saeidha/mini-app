@@ -26,6 +26,7 @@ const items = [
     description: '+1000 B',
     buttonLabel: 'Open',
     link: 'https://x.com/base',
+    state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const items = [
     description: '+1000 B',
     buttonLabel: 'Open',
     link: 'https://warpcast.com/base',
+    state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ const items = [
     description: '+1000 B',
     buttonLabel: 'Open',
     link: 'https://discord.gg/buildonbase',
+    state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ const items = [
     description: '+1000 B',
     buttonLabel: 'Open',
     link: 'https://warpcast.com/jessepollak',
+    state: 'open' as 'open' | 'claim' | 'disable'
   }
 ];
 
