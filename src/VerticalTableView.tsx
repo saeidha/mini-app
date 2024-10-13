@@ -1,5 +1,5 @@
 import './VerticalTableView.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 interface Item {
   id: number;
   icon: string;
