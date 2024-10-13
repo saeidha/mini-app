@@ -97,7 +97,7 @@ function App() {
     }
   }, [userData, count]);
 
-  const handleLinkClick = (id: number) => {
+  const handleLinkClick = () => {
     incrementCount();
   };
 

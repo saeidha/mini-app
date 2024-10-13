@@ -12,7 +12,7 @@ interface Item {
 interface VerticalTableViewProps {
   items: Item[];
   userId: number;
-  onLinkClick: (id: number) => void;
+  onLinkClick: () => void;
 }
 
 const VerticalTableView = ({ items , userId, onLinkClick }: VerticalTableViewProps) => {
@@ -39,7 +39,7 @@ const VerticalTableView = ({ items , userId, onLinkClick }: VerticalTableViewPro
       }));
       localStorage.setItem(`task_id_${userId}_${item.id}`, 'claim');
     } else if (itemStates[item.id] === 'claim') {
-      onLinkClick(item.id);
+      onLinkClick();
       setItemStates(prevStates => ({
         ...prevStates,
         [item.id]: 'disable'
