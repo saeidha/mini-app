@@ -45,6 +45,11 @@
     /* transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 12px 12px 12px rgba(0, 123, 255, 0.3); */
   }
+
+  .vertical-table-button.disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
   
   /* .vertical-table-button {
     

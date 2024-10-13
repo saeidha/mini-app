@@ -83,7 +83,7 @@ function App() {
   }, [])
 
   const incrementCount = () => {
-    setCount(prevCount => prevCount + 1);
+    setCount(prevCount => prevCount + 1000);
   };
 
   useEffect(() => {
@@ -93,12 +93,16 @@ function App() {
     }
   }, [userData, count]);
 
+  const handleLinkClick = (id: number) => {
+    incrementCount();
+  };
+
   return (
     <>
 
       {/* <h2 className='roboto-bold'>Based Bet Bot</h2> */}
 
-      <img src={baseLogo} className="logo" alt="Base logo" onClick={incrementCount} />
+      <img src={baseLogo} className="logo" alt="Base logo"/>
 
       <div className="p-4">
         {userData ? (
@@ -118,7 +122,9 @@ function App() {
 
       <div>
       <h3 className='task-header-text'>Tasks</h3>
-      <VerticalTableView items={items} />
+      {userData ? (
+      <VerticalTableView items={items} userId={userData.id} onLinkClick={handleLinkClick}  />
+      ) : (<></>)}
     </div>
     </>
   )
