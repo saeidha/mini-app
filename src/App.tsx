@@ -18,7 +18,7 @@ const APP_SUPPORTED_CHAIN_IDS = [8453, 84532]
 export const coinbaseWallet = new CoinbaseWalletSDK({
   appName: APP_NAME,
   appLogoUrl: APP_LOGO_URL,
-  chainIds: APP_SUPPORTED_CHAIN_IDS
+  appChainIds: APP_SUPPORTED_CHAIN_IDS
 })
 
 // Initialize a Web3 Provider object
