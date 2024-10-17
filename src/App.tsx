@@ -7,25 +7,6 @@ import twitter from '/twitter.png';
 import './App.css'
 import WebApp from '@twa-dev/sdk'
 import VerticalTableView from './VerticalTableView'
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
-import Web3 from 'web3'
-
-const APP_NAME = 'Based world bot'
-const APP_LOGO_URL = 'https://telegram-mini-app-theta-ruddy.vercel.app/base.png'
-const APP_SUPPORTED_CHAIN_IDS = [8453, 84532]
-
-// Initialize Coinbase Wallet SDK
-export const coinbaseWallet = new CoinbaseWalletSDK({
-  appName: APP_NAME,
-  appLogoUrl: APP_LOGO_URL,
-  appChainIds: APP_SUPPORTED_CHAIN_IDS
-})
-
-// Initialize a Web3 Provider object
-export const ethereum = coinbaseWallet.makeWeb3Provider()
-
-// Initialize a Web3 object
-export const web3 = new Web3(ethereum as any)
 
 // Define the interface for user data
 interface UserData {
@@ -120,28 +101,12 @@ function App() {
     incrementCount();
   };
 
-
-
-  const connect_wallet = () => {
-    // Use eth_requestAccounts
-    ethereum.request({ method: 'eth_requestAccounts' }).then(response => {
-      const accounts : string[] = response as string[];
-      console.log(`User's address is ${accounts[0]}`)
-
-      // Optionally, have the default account set for web3.js
-      web3.eth.defaultAccount = accounts[0]
-    })
-  }
-
   return (
     <>
 
       {/* <h2 className='roboto-bold'>Based Bet Bot</h2> */}
 
       <img src={baseLogo} className="logo" alt="Base logo"/>
-      <button onClick={connect_wallet}>
-        connect walllet
-        </button>
       <div className="p-4">
         {userData ? (
           <>
