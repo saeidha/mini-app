@@ -2,6 +2,7 @@ import { WagmiProvider, createConfig, http } from "wagmi";
 import { base } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import { ReactNode } from 'react';
 
 const config = createConfig(
   getDefaultConfig({
@@ -29,7 +30,7 @@ const config = createConfig(
 
 const queryClient = new QueryClient();
 
-export const Web3Provider = ({ children }) => {
+export const Web3Provider = ({ children }: { children: ReactNode }) => {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
