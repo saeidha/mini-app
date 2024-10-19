@@ -137,3 +137,10 @@
   text-shadow:  #646cff 2px 0 25px;
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
+.connectButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}

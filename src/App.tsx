@@ -7,6 +7,8 @@ import twitter from '/twitter.png';
 import './App.css'
 import WebApp from '@twa-dev/sdk'
 import VerticalTableView from './VerticalTableView'
+import { Web3Provider } from "./Web3Provider";
+import {ExampleButton} from './ExampleButton';
 
 // Define the interface for user data
 interface UserData {
@@ -104,9 +106,14 @@ function App() {
   return (
     <>
 
-      {/* <h2 className='roboto-bold'>Based Bet Bot</h2> */}
-
       <img src={baseLogo} className="logo" alt="Base logo"/>
+
+      <div className="connectButton">
+        <Web3Provider>
+          <ExampleButton />
+        </Web3Provider>
+      </div>
+      
       <div className="p-4">
         {userData ? (
           <>
