@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import baseLogo from '/logo.png'
+import logo from '/logo.png'
+import baseLogo from '/base.svg'
 import verified from '/verified.png'
 import discord from '/discord.png';
 import farcaster from '/farcaster.svg';
@@ -23,36 +24,45 @@ interface UserData {
 const items = [
   {
     id: 1,
+    icon: baseLogo,
+    title: 'Base Learn NFTs Owner',
+    description: '+1000 B',
+    buttonLabel: 'Open',
+    link: 'https://docs.base.org/base-learn/progress/',
+    state: 'open' as 'open' | 'claim' | 'disable'
+  },
+  {
+    id: 2,
     icon: twitter,
     title: 'Follow Base on X',
-    description: '+1000 B',
+    description: '+100 B',
     buttonLabel: 'Open',
     link: 'https://x.com/base',
     state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
-    id: 2,
+    id: 3,
     icon: farcaster,
     title: 'Follow Base on Farcaster',
-    description: '+1000 B',
+    description: '+100 B',
     buttonLabel: 'Open',
     link: 'https://warpcast.com/base',
     state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
-    id: 3,
+    id: 4,
     icon: discord,
     title: 'Join Base on Discord',
-    description: '+1000 B',
+    description: '+100 B',
     buttonLabel: 'Open',
     link: 'https://discord.gg/buildonbase',
     state: 'open' as 'open' | 'claim' | 'disable'
   },
   {
-    id: 4,
+    id: 5,
     icon: farcaster,
     title: 'Follow Jesse on Farcaster',
-    description: '+1000 B',
+    description: '+100 B',
     buttonLabel: 'Open',
     link: 'https://warpcast.com/jessepollak',
     state: 'open' as 'open' | 'claim' | 'disable'
@@ -106,7 +116,7 @@ function App() {
   return (
     <>
 
-      <img src={baseLogo} className="logo" alt="Base logo"/>
+      <img src={logo} className="logo" alt="Base logo"/>
 
       <div className="connectButton">
         <Web3Provider>
