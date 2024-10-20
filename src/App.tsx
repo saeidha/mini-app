@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import baseLogo from '/base.png'
+import baseLogo from '/logo.png'
 import verified from '/verified.png'
 import discord from '/discord.png';
 import farcaster from '/farcaster.svg';
